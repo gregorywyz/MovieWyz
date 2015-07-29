@@ -1,0 +1,10 @@
+<h1>Search Results Here!</h1>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li><%= movie['Title'] %></li>
+      <ul>
+        <li><%= link_to 'Show', movie_path(movie['imdbID']) %></li>
+      </ul>
+  <% end %>
+</ul>
