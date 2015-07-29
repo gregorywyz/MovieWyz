@@ -10,3 +10,19 @@ nav .input-field label {
 input[type=search] {
   margin: 0;
 }
+
+.brand-logo {
+  img {
+    height: 56px;
+    padding: 6px;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .brand-logo {
+    img {
+      height: 64px;
+      padding: 8px;
+    }
+  }
+}
