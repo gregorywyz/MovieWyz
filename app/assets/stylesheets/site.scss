@@ -1,3 +1,12 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+nav .input-field label {
+    text-align: right;
+    right: 1em;
+}
+
+input[type=search] {
+  margin: 0;
+}

@@ -1,9 +1,26 @@
-<h1>MovieWyz</h1>
+<div class="container center-align">
 
-<H2>Welcome! Enter the name of a movie you would like to find out more about!</H2>
+  <div class="row">
+    <div class="col s12">
+      <h1>MovieWyz</h1>
+    </div>
+  </div>
 
-<%= form_tag("/movies", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("GO") %>
-<% end %>
+  <div class="row">
+    <div class="col s12">
+      <H4>Welcome! Enter the name of a movie you would like to find out more about!</H4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+      <%= form_tag("/movies", method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("GO") %>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>
