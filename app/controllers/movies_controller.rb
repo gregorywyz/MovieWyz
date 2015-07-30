@@ -4,14 +4,14 @@ class MoviesController < ApplicationController
     # render :json => params
     # render plain: params[:q].inspect
 
-    query = params[:q]
+    @query = params[:q]
 
     # janky way to check for blank search
-    if query == ''
+    if @query == ''
       redirect_to root_path
     end
 
-    url = 'http://www.omdbapi.com/?s=' + query
+    url = 'http://www.omdbapi.com/?s=' + @query
     response = HTTParty.get(url)
 
     # shows response data from http request
@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
     # this does not work
     # need to figure a way to check response correctly
     if response.code === 200
+      # render :json => response
       @movies = response['Search']
       # render :json => response
     else
@@ -30,8 +31,8 @@ class MoviesController < ApplicationController
   def show
     query = params[:id]
     url = 'http://www.omdbapi.com/?i=' + query + '&plot=full&tomatoes=true'
-    response = HTTParty.get(url)
+    @movie = HTTParty.get(url)
 
-    render :json => response
+    # render :json => @movie
   end
 end

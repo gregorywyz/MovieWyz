@@ -1,1 +1,82 @@
-<h1>Movie Show Page</h1>
+<div class="container">
+
+  <div class="row">
+    <div class="col s10 offset-s1">
+      <h2><%= @movie['Title'] %></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6">
+      <img src="<%= @movie['Poster'] %>">
+    </div>
+    <div class="col s12 m6">
+      <table class="hoverable">
+        <tbody>
+          <tr>
+            <td>Year</td>
+            <td><%= @movie['Year'] %></td>
+          </tr>
+          <tr>
+            <td>Genre</td>
+            <td><%= @movie['Genre'] %></td>
+          </tr>
+          <tr>
+            <td>Rating</td>
+            <td><%= @movie['Rated'] %></td>
+          </tr>
+          <tr>
+            <td>Runtime</td>
+            <td><%= @movie['Runtime'] %></td>
+          </tr>
+          <tr>
+            <td>Director</td>
+            <td><%= @movie['Director'] %></td>
+          </tr>
+          <tr>
+            <td>Actors</td>
+            <td><%= @movie['Actors'] %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<hr>
+<%= @movie['Year'] %>
+<br>
+<%= @movie['Rated'] %>
+<br>
+<%= @movie['Released'] %>
+<br>
+<%= @movie['Runtime'] %>
+<br>
+<%= @movie['Genre'] %>
+<br>
+<%= @movie['Director'] %>
+<br>
+<%= @movie['Writer'] %>
+<br>
+<%= @movie['Actors'] %>
+<br>
+<%= @movie['Plot'] %>
+<br>
+<%= @movie['Language'] %>
+<br>
+<%= @movie['Country'] %>
+<br>
+<%= @movie['Awards'] %>
+<br>
+<%= @movie['Poster'] %>
+<br>
+<%= @movie['imdbRating'] %>
+<br>
+<%= @movie['Type'] %>
+<br>
+<%= @movie['tomatoRating'] %>
+<br>
+<%= @movie['tomatoConsensus'] %>
+<br>
+
+
+</div>
