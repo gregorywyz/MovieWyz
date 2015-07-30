@@ -3,27 +3,42 @@
     <%= link_to "#{image_tag 'movie_timestamp.svg'}".html_safe, root_path, :class => "brand-logo center" %>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="left hide-on-med-and-down">
-      <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-      <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-      <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-      <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+      <li>
+        <%= link_to url_for(:back) do %>
+          <i class="material-icons">replay</i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to root_path do %>
+          <i class="material-icons">movie</i>
+        <% end %>
+      </li>
+      <li><a href="#"><i class="material-icons">perm_identity</i></a></li>
     </ul>
     <ul class="right">
       <li>
-      <form>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label for="search"><i class="material-icons">search</i></label>
-          <!-- <i class="material-icons">close</i> -->
-        </div>
-      </form>
+        <%= form_tag("/movies", method: "get") do %>
+          <div class="input-field">
+          <%= label_tag(:q) do %>
+            <i class="material-icons">search</i>
+          <% end %>
+          <%= text_field_tag(:q) %>
+          </div>
+        <% end %>
       </li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
-      <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-      <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-      <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-      <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+      <li>
+        <%= link_to url_for(:back) do %>
+          <i class="material-icons">replay</i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to root_path do %>
+          <i class="material-icons">movie</i>
+        <% end %>
+      </li>
+      <li><a href="#"><i class="material-icons">perm_identity</i></a></li>
     </ul>
   </div>
 </nav>
