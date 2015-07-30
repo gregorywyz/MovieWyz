@@ -1,10 +1,27 @@
-<h1>Search Results Here!</h1>
+<div class="container">
 
-<ul>
-  <% @movies.each do |movie| %>
-    <li><%= movie['Title'] %></li>
-      <ul>
-        <li><%= link_to 'Show', movie_path(movie['imdbID']) %></li>
-      </ul>
-  <% end %>
-</ul>
+  <h5>Results for: <%= @query %></h5>
+
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col s10 offset-s1">
+        <%= link_to movie_path(movie['imdbID']) do %>
+          <div class="card-panel hoverable">
+            <div class="row">
+              <div class="col s2">
+                <div class="row">
+                  <div class="col s12"><%= movie['Year'] %></div>
+                  <div class="col s12"><%= movie['Type'] %></div>
+                </div>
+              </div>
+              <div class="col s10">
+                <h4><%= movie['Title'] %></h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
