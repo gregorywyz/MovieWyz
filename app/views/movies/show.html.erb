@@ -6,15 +6,21 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col s12 m10 offset-m1">
-      <p><%= @movie['tomatoConsensus'] %></p>
+  <% if @movie['tomatoConsensus'] != 'N/A' %>
+    <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <p><%= @movie['tomatoConsensus'] %></p>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <div class="row">
     <div class="col s12 m6">
-      <img class="movie-poster" src="<%= @movie['Poster'] %>">
+      <% if @movie['Poster'] != 'N/A' %>
+        <img class="movie-poster" src="<%= @movie['Poster'] %>">
+      <% else %>
+        <%= image_tag("dude_abides.jpg", class: "movie-poster") %>
+      <% end %>
     </div>
     <div class="col s12 m6">
       <table class="hoverable">
@@ -51,57 +57,75 @@
   <div class="row">
     <div class="col s12 m10 offset-m1">
       <h4>Ratings</h4>
+      <% if @movie['tomatoRating'] == 'N/A' && @movie['imdbRating'] == 'N/A' %>
+        <p>No Ratings Available</p>
+      <% end %>
     </div>
     <div class="col s12 m5 offset-m1 card-panel hoverable">
-      <h5>Rotten Tomato: <%= @movie['tomatoRating'] %> / 10</h5>
+      <% if @movie['tomatoRating'] != "N/A" %>
+        <h5>Rotten Tomato: <%= @movie['tomatoRating'] %> / 10 <i class="material-icons star">grade</i></h5>
+      <% else %>
+        <h5>Rotten Tomato: No Rating</h5>
+      <% end %>
     </div>
     <div class="col s12 m5 card-panel hoverable">
-      <h5>IMDB: <%= @movie['imdbRating'] %> / 10</h5>
+      <% if @movie['imdbRating'] != "N/A" %>
+        <h5>IMDB: <%= @movie['imdbRating'] %> / 10 <i class="material-icons star">grade</i></h5>
+      <% else %>
+        <h5>IMDB: No Rating</h5>
+      <% end %>
     </div>
   </div>
 
   <div class="row">
     <div class="col s12 m10 offset-m1">
       <h4>Plot</h4>
-      <p><%= @movie['Plot'] %></p>
+      <% if @movie['Poster'] != 'N/A' %>
+        <p><%= @movie['Plot'] %></p>
+      <% else %>
+        <p>No Plot Available</p>
+      <% end %>
     </div>
   </div>
 
-<hr>
-<%= @movie['Year'] %>
-<br>
-<%= @movie['Rated'] %>
-<br>
-<%= @movie['Released'] %>
-<br>
-<%= @movie['Runtime'] %>
-<br>
-<%= @movie['Genre'] %>
-<br>
-<%= @movie['Director'] %>
-<br>
-<%= @movie['Writer'] %>
-<br>
-<%= @movie['Actors'] %>
-<br>
-<%= @movie['Plot'] %>
-<br>
-<%= @movie['Language'] %>
-<br>
-<%= @movie['Country'] %>
-<br>
-<%= @movie['Awards'] %>
-<br>
-<%= @movie['Poster'] %>
-<br>
-<%= @movie['imdbRating'] %>
-<br>
-<%= @movie['Type'] %>
-<br>
-<%= @movie['tomatoRating'] %>
-<br>
-<%= @movie['tomatoConsensus'] %>
-<br>
+  <div class="row">
+    <div class="col s12 m10 offset-m1">
+      <table class="hoverable">
+        <tbody>
+          <tr>
+            <td>Type</td>
+            <td><%= @movie['Type'] %></td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td><%= @movie['Country'] %></td>
+          </tr>
+          <tr>
+            <td>Writer</td>
+            <td><%= @movie['Writer'] %></td>
+          </tr>
+          <tr>
+            <td>Language</td>
+            <td><%= @movie['Language'] %></td>
+          </tr>
+          <tr>
+            <td>Awards</td>
+            <td><%= @movie['Awards'] %></td>
+          </tr>
+          <tr>
+            <td>Released</td>
+            <td><%= @movie['Released'] %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col s12 m10 offset-m1">
+      <h4>Comments</h4>
+      <p>Work in Prgress...</p>
+    </div>
+  </div>
 
 </div>
