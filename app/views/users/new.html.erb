@@ -9,6 +9,9 @@
         <%= f.text_field :name, placeholder: "Enter your name"%>
         <%= f.text_field :password, placeholder: "Enter your password", type: "password"%>
         <%= f.submit "Create", class: "waves-light btn" %>
+        <% if @returning_user %>
+          <%= link_to "Log In", login_path, class: "waves-light btn" %>
+        <% end %>
 
       <% end %>
 

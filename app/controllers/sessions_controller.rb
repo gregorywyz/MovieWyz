@@ -12,14 +12,14 @@ class SessionsController < ApplicationController
       flash[:cyan] = "User logged in!!"
       redirect_to root_path
     else
-      flash[:red] = "Credentials Invalid!!"
+      flash[:amber] = "Credentials Invalid!!"
       render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:yellow] = "User has logged out"
+    flash[:yellow] = "You are now logged out."
     redirect_to login_path
   end
 
