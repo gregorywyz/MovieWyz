@@ -6,14 +6,10 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
 
-    flash[:cyan] = "Welcome new member!!"
-
-    # # auto login after create user
-    # session[:user_id] = @user.id
-    # session[:password_digest] = @user.password_digest
-    # flash[:cyan] = "Welcome new member!"
-    # redirect_to root_path
-
+    # auto login after create user
+    session[:user_id] = @user.id
+    session[:password_digest] = @user.password_digest
+    flash[:cyan] = "You must be new here! Welcome!"
     redirect_to root_path
   end
 
