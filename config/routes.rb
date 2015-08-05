@@ -19,7 +19,8 @@ Rails.application.routes.draw do
     get 'signup' => 'users#new'
     post 'signup' => 'users#create'
 
-    resources :sessions
+    get "login" => "sessions#new"
+    post "login" => "session#create"
 
   # Example resource route with options:
   #   resources :products do
