@@ -1,7 +1,10 @@
+<!-- for flash messages: k = color, v = message to be displayed -->
 <% flash.each do |k, v| %>
-
-  <div class="card-panel <%= k %> center-align">
-    <%= v %>
+  <div class="row center-align">
+    <div class="col s10 offset-s1">
+      <div class="card-panel <%= k %>">
+        <%= v %>
+      </div>
+    </div>
   </div>
-
 <% end %>
