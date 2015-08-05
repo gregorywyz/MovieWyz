@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       session[:password_digest] = @user.password_digest
-      flash[:cyan] = "User logged in!!"
+      flash[:cyan] = "You are now logged in!"
       redirect_to root_path
     else
-      flash[:amber] = "Credentials Invalid!!"
+      flash[:amber] = "Credentials invalid. Please try again or sign up."
       render :new
     end
   end
