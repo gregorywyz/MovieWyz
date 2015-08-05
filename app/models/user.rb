@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password, on: :create
 
   def self.authenticate name, password
-    User.find_by_email(name).try(:authenticate, password)
+    User.find_by_name(name).try(:authenticate, password)
   end
 
 end

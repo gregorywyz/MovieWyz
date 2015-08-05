@@ -20,7 +20,8 @@ Rails.application.routes.draw do
     post 'signup' => 'users#create'
 
     get "login" => "sessions#new"
-    post "login" => "session#create"
+    post "login" => "sessions#create"
+    get "logout" => "sessions#destroy"
 
   # Example resource route with options:
   #   resources :products do
