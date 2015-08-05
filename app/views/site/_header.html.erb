@@ -13,7 +13,17 @@
           <i class="material-icons">movie</i>
         <% end %>
       </li>
-      <li><a href="#"><i class="material-icons">perm_identity</i></a></li>
+      <li>
+      <% if @current_user %>
+        <%= link_to logout_path do %>
+          <i class="material-icons">perm_identity</i>
+        <% end %>
+      <% else %>
+        <%= link_to login_path do %>
+          <i class="material-icons">perm_identity</i>
+        <% end %>
+      <% end %>
+      </li>
     </ul>
     <ul class="right">
       <li>
@@ -38,7 +48,17 @@
           <i class="material-icons">movie</i>
         <% end %>
       </li>
-      <li><a href="#"><i class="material-icons">perm_identity</i></a></li>
+      <li>
+      <% if @current_user %>
+        <%= link_to logout_path do %>
+          <i class="material-icons">perm_identity</i>
+        <% end %>
+      <% else %>
+        <%= link_to login_path do %>
+          <i class="material-icons">perm_identity</i>
+        <% end %>
+      <% end %>
+      </li>
     </ul>
   </div>
 </nav>
